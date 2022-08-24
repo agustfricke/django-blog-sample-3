@@ -1,0 +1,22 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+<br>
+<center>
+<h3>Hola {{ user }}!</h3>
+</center>
+{% for p in publicaciones %} <br>
+
+<div class="card">
+    <h5 class="card-header">{{ p.titulo }}</h5>
+    <div class="card-body">
+      <h5 class="card-title">Usuario: {{ p.usuario }}</h5>
+      <p class="card-text">{{ p.descripcion }}</p>
+      <a href="{% url 'eliminar' p.id %}" class="btn btn-danger">Eliminar</a>
+      <a href="{% url 'actualizar' p.id %}" class="btn btn-success">Actualizar</a>
+    </div>
+  </div>
+
+{% endfor %}
+
+{% endblock %}

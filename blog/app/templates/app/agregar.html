@@ -1,0 +1,16 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+<br>
+<center>
+<h1>Agrega una Publicacion</h1>
+</center>
+<form action="" method="POST">
+{{ form.as_p }}
+{% csrf_token %}
+<button class="btn btn-success" type="submit">Agregar</button>
+</form>
+
+
+
+{% endblock %}
